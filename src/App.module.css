@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+}
+
+.home {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  overflow: auto;
+}
