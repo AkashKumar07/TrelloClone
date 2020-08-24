@@ -35,6 +35,7 @@ function App() {
     <DragDropContext onDragEnd={onDragEnd}>
     <div>
       <h1 style={{textAlign:'center', margin: 0}}>Trello Clone</h1>
+      <div className={classes.wrapper}>
       <Droppable droppableId='all-lists' direction='horizontal' type='list'>
           {(provided)=> (
               <div {...provided.droppableProps} ref={provided.innerRef} className={classes.home}>
@@ -46,6 +47,7 @@ function App() {
             </div>
           )}
       </Droppable>
+      </div>
     </div>
     </DragDropContext>
   );

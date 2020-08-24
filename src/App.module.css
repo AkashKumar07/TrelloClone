@@ -5,6 +5,11 @@
 .home {
   display: flex;
   flex-direction: row;
+}
+
+.wrapper {
   width: 100%;
   overflow: auto;
+  height: 93.5vh;
 }
+

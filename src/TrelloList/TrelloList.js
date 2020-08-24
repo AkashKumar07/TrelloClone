@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {Droppable, Draggable} from 'react-beautiful-dnd';
 import CloseIcon from '@material-ui/icons/Close';
@@ -9,8 +9,19 @@ import TrelloActionButton from '../TrelloActionButton/TrelloActionButton';
 import {deleteList} from '../Store/Actions/ListActions';
 
 const TrelloList  = (props) => {
+    const [cardsHeight, setCardsHeight] = useState(false);
     const dispatch = useDispatch();
     const data = props.list
+
+    const cardsStyle = [classes.cardsDisplay]
+
+    const toggleCardsHeight = () => {
+        setCardsHeight(!cardsHeight);
+    }
+
+    if(cardsHeight){
+        cardsStyle.push(classes.createCard)
+    }
 
     return(
         <Draggable draggableId={String(data.id)} index={props.index}>
@@ -30,13 +41,15 @@ const TrelloList  = (props) => {
                             <CloseIcon/>
                             </div>
                             </div>
-                            <div className={classes.cardsDisplay}>
+                            <div className={cardsStyle.join(" ")}>
                             {data.cards.map((card, index)=> 
                                 <Card key={card.id} content={card.text} listId={data.id} id={card.id} index={index}/>
                             )}
                             {provided.placeholder}
                             </div>
-                            <TrelloActionButton id={data.id}/>
+                            <div >
+                            <TrelloActionButton toggle={toggleCardsHeight} id={data.id}/>
+                            </div>
                         </div>
                     )}
                 </Droppable>

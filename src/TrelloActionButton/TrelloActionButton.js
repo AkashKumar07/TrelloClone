@@ -16,6 +16,9 @@ const TrelloActionButton = (props) => {
 
     const toggleFormOpen = () => {
         setFormOpen(!formOpen);
+        if(!props.list){
+            (() => props.toggle())();
+        }
     }
 
     const onChangeHandler = (event) => {
