@@ -1,6 +1,6 @@
 # Introduction
 
-I have created the basic clone of trello app. This web app consists of basic kanban boards, wherein, we can add a list or a board, move them and delete them. Similarly, we can also add a card with a tast written in it, move it from one list or board to another and delete it.
+I have created the basic clone of trello app. This web app consists of basic kanban boards, wherein, we can add a list or a board, move them and delete them. Similarly, we can also add a card with a text written in it, move it from one list or board to another and delete it.
 
 ## How to use this web app on the local machine
 
